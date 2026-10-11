@@ -1,0 +1,15 @@
+.cursor-glow {
+  position: fixed; left: 0; top: 0; z-index: 1;
+  width: 560px; height: 560px; margin: -280px 0 0 -280px;
+  border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(200, 245, 66, 0.12) 0%, rgba(123, 92, 255, 0.09) 38%, transparent 68%);
+}
+.cursor-dot {
+  position: fixed; left: 0; top: 0; z-index: 9999;
+  width: 10px; height: 10px; margin: -5px 0 0 -5px;
+  border-radius: 50%; pointer-events: none;
+  background: var(--lime);
+  mix-blend-mode: difference;
+  transition: width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease);
+}
+.cursor-dot.is-hover { width: 48px; height: 48px; margin: -24px 0 0 -24px; }

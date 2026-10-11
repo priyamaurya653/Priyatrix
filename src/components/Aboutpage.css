@@ -1,0 +1,103 @@
+/* =========================================================
+   About us page (compact bento layout)
+   ========================================================= */
+.ab2 { position: relative; z-index: 1; padding-top: 130px; }
+
+/* ---------- Hero ---------- */
+.ab2-hero { text-align: center; }
+.ab2-pill { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; font-size: 14px; color: var(--muted); border: 1px solid var(--stroke-2); background: var(--glass); }
+.ab2-pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 12px var(--lime); }
+
+.ab2-title {
+  display: flex; justify-content: center; gap: 0.25em; flex-wrap: wrap; overflow: hidden;
+  margin-top: 24px; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(3.6rem, 15vw, 12rem); line-height: 0.95; letter-spacing: -0.06em;
+}
+.ab2-title span { display: inline-block; }
+.ab2-title .outline { color: transparent; -webkit-text-stroke: 2px rgba(255, 255, 255, 0.55); }
+.ab2-title .solid {
+  background: linear-gradient(100deg, var(--lime), #EDFFB8 35%, #A795FF 70%, var(--lime));
+  background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gradShift 7s linear infinite;
+}
+.ab2-intro { max-width: 46ch; margin: 28px auto 0; font-size: clamp(1.05rem, 1.7vw, 1.3rem); color: var(--muted); }
+
+.ab2-strip {
+  margin-top: 54px; padding: 18px 0; overflow: hidden;
+  border-block: 1px solid var(--stroke);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.ab2-strip-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+.ab2-strip-group { display: flex; }
+.ab2-strip-group span { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font-family: var(--font-display); font-weight: 500; font-size: clamp(1.1rem, 2vw, 1.6rem); letter-spacing: -0.03em; white-space: nowrap; }
+.ab2-strip-group b { color: var(--lime); font-size: .7em; }
+
+/* ---------- Bento grid ---------- */
+.ab2-bento {
+  display: grid; gap: 14px; margin-top: clamp(50px, 7vw, 90px);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    'story story year nums'
+    'story story year nums'
+    'mission believe contact contact';
+}
+.ab2-tile { position: relative; padding: clamp(22px, 2.6vw, 32px); border-radius: var(--r-lg); display: flex; flex-direction: column; }
+.ab2-tile > small { font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--lime); }
+.t-story { grid-area: story; justify-content: space-between; }
+.t-story p { margin-top: 18px; font-family: var(--font-display); font-weight: 500; font-size: clamp(1.25rem, 2.2vw, 1.85rem); line-height: 1.3; letter-spacing: -0.03em; }
+
+.t-year {
+  grid-area: year; justify-content: flex-end; color: #000;
+  background: linear-gradient(160deg, #e9ff9e, var(--lime) 45%, #a6d127);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 30px 70px -30px rgba(200, 245, 66, 0.6);
+}
+.t-year > small { color: rgba(0, 0, 0, 0.6); }
+.t-year strong { font-family: var(--font-display); font-weight: 700; font-size: clamp(3rem, 6vw, 5rem); letter-spacing: -0.06em; line-height: 1; margin-top: 6px; }
+.t-year span { margin-top: 8px; font-weight: 600; }
+
+.t-nums { grid-area: nums; justify-content: space-between; gap: 18px; }
+.t-nums > div { padding-bottom: 14px; border-bottom: 1px solid var(--stroke); }
+.t-nums > div:last-child { border-bottom: 0; padding-bottom: 0; }
+.t-nums strong { display: block; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -0.05em; line-height: 1; }
+.t-nums small { font-size: 14px; color: var(--muted); }
+
+.t-mission { grid-area: mission; }
+.t-mission p { margin-top: 12px; font-size: 1.05rem; line-height: 1.5; }
+
+.t-believe { grid-area: believe; }
+.t-believe ul { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; }
+.t-believe li { display: flex; align-items: center; gap: 10px; }
+.t-believe li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 10px var(--lime); }
+
+.t-contact {
+  grid-area: contact; gap: 8px;
+  background: radial-gradient(120% 120% at 100% 0%, rgba(123, 92, 255, 0.3), transparent 55%), linear-gradient(155deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+}
+.t-contact b { margin-top: 6px; font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; letter-spacing: -0.04em; }
+.t-contact a, .t-contact span { display: inline-flex; align-items: center; gap: 10px; width: fit-content; color: var(--muted); transition: color .3s; }
+.t-contact a:hover { color: var(--lime); }
+.t-contact svg { width: 17px; height: 17px; color: var(--lime); }
+
+/* ---------- CTA ---------- */
+.ab2-cta { padding-block: clamp(60px, 9vw, 120px); }
+.ab2-cta-box { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; padding-top: 40px; border-top: 1px solid var(--stroke); }
+.ab2-cta-box h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.8rem, 4vw, 3.2rem); letter-spacing: -0.05em; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .ab2-bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'story story'
+      'year nums'
+      'mission believe'
+      'contact contact';
+  }
+}
+@media (max-width: 600px) {
+  .ab2 { padding-top: 110px; }
+  .ab2-title .outline { -webkit-text-stroke-width: 1.5px; }
+  .ab2-bento { grid-template-columns: 1fr; grid-template-areas: 'story' 'year' 'nums' 'mission' 'believe' 'contact'; }
+  .ab2-cta-box { flex-direction: column; align-items: flex-start; }
+}

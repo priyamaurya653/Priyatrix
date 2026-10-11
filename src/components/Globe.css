@@ -1,0 +1,6 @@
+.globe-wrap { position: absolute; inset: 0; }
+.globe-canvas {
+  display: block; width: 100%; height: 100%;
+  cursor: grab; touch-action: pan-y;
+}
+.globe-canvas:active { cursor: grabbing; }

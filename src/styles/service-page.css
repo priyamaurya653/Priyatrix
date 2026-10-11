@@ -1,0 +1,124 @@
+/* =========================================================
+   Shared styles for service pages (Website, Apps, Graphics)
+   ========================================================= */
+
+/* ---------- Hero ---------- */
+.wp-hero { position: relative; padding-top: 140px; padding-bottom: clamp(60px, 8vw, 100px); overflow: hidden; }
+.wp-hero-grid { position: relative; display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; }
+
+.crumbs { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--faint); }
+.crumbs a { color: var(--muted); transition: color .3s; }
+.crumbs a:hover { color: var(--lime); }
+.crumbs [aria-current] { color: var(--lime); }
+
+.wp-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.3rem, 5vw, 4.6rem); line-height: 1.04; letter-spacing: -0.05em; margin-top: 22px; }
+.wp-title .line { display: block; }
+.wp-title .line:not(.grad-line) .split-inner { background: linear-gradient(180deg, #fff 25%, #c2c6bb); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.wp-lead { color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.15rem); max-width: 48ch; margin-top: 24px; }
+.wp-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+
+/* Stats strip */
+.wp-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: clamp(50px, 6vw, 80px); padding: 28px clamp(20px, 3vw, 40px); border-radius: var(--r-lg); }
+.wp-stats strong { display: block; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.8rem, 3.4vw, 2.8rem); letter-spacing: -0.05em; line-height: 1.05; }
+.wp-stats span { font-size: 14px; color: var(--muted); }
+
+/* ---------- Website types ---------- */
+.wp-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.wp-types > div { display: flex; }
+.wp-type { width: 100%; padding: 28px; border-radius: var(--r-md); display: flex; flex-direction: column; transition: border-color .4s; }
+.wp-type:hover { border-color: rgba(200, 245, 66, 0.4); }
+.wp-type-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; color: var(--lime); background: rgba(200, 245, 66, 0.1); border: 1px solid rgba(200, 245, 66, 0.25); transform: translateZ(30px); transition: background .4s, color .4s; }
+.wp-type-icon svg { width: 24px; height: 24px; }
+.wp-type:hover .wp-type-icon { background: var(--lime); color: #000; }
+.wp-type h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; letter-spacing: -0.03em; margin-top: 26px; transform: translateZ(40px); }
+.wp-type p { color: var(--muted); font-size: 15.5px; margin-top: 8px; transform: translateZ(20px); }
+.wp-type-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 20px; }
+
+/* ---------- Included ---------- */
+.wp-included { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: clamp(30px, 5vw, 70px); align-items: start; }
+.wp-feats { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.wp-feats li { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 18px; font-size: 15.5px; }
+.wp-feats li > span { flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(180deg, #e2ff85, var(--lime) 50%, #b3de2e); color: #000; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+.wp-feats li > span svg { width: 15px; height: 15px; stroke-width: 2.6; }
+
+/* ---------- Stack ---------- */
+.wp-stack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.wp-stack-col { padding: 24px; border-radius: var(--r-md); }
+.wp-stack-col h3 { font-size: 14px; font-weight: 500; color: var(--lime); }
+.wp-stack-col div { display: grid; gap: 10px; margin-top: 16px; }
+.wp-stack-col span { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; letter-spacing: -0.03em; padding-bottom: 10px; border-bottom: 1px solid var(--stroke); }
+.wp-stack-col span:last-child { border-bottom: 0; padding-bottom: 0; }
+
+/* ---------- Process ---------- */
+.wp-steps { position: relative; }
+.wp-steps-line { position: absolute; left: 0; right: 0; top: 22px; height: 2px; background: var(--stroke); border-radius: 2px; }
+.wp-steps-line span { position: absolute; inset: 0; transform-origin: left; background: linear-gradient(90deg, var(--purple), var(--lime)); box-shadow: 0 0 16px rgba(200, 245, 66, 0.5); }
+.wp-steps ol { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+.wp-step-n { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; font-weight: 700; color: #000; background: linear-gradient(180deg, #e2ff85, var(--lime) 50%, #b3de2e); border: 4px solid #000; box-shadow: 0 0 0 1px var(--stroke-2), 0 0 24px rgba(200, 245, 66, 0.45); }
+.wp-steps small { display: block; margin-top: 18px; font-size: 13px; color: var(--lime); }
+.wp-steps h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; letter-spacing: -0.03em; margin-top: 4px; }
+.wp-steps p { color: var(--muted); font-size: 14.5px; margin-top: 6px; }
+
+/* ---------- Pricing ---------- */
+.wp-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+.wp-plan { position: relative; display: flex; flex-direction: column; padding: 32px; border-radius: var(--r-lg); }
+.wp-plan.is-popular {
+  border-color: rgba(200, 245, 66, 0.55);
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgba(200, 245, 66, 0.18), transparent 60%),
+    linear-gradient(155deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.02));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 70px -20px rgba(200, 245, 66, 0.45), 0 40px 80px -40px rgba(0, 0, 0, 0.9);
+}
+.plan-badge { position: absolute; top: 22px; right: 22px; font-size: 12.5px; font-weight: 600; padding: 5px 12px; border-radius: 999px; color: #000; background: linear-gradient(180deg, #e2ff85, var(--lime) 50%, #b3de2e); }
+.wp-plan h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; letter-spacing: -0.03em; }
+.plan-for { color: var(--muted); font-size: 15px; margin-top: 8px; min-height: 3em; }
+.plan-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-top: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--stroke); }
+.plan-price strong { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 3.4vw, 2.6rem); letter-spacing: -0.05em; }
+.is-popular .plan-price strong { color: var(--lime); }
+.plan-price span { font-size: 14px; color: var(--faint); }
+.wp-plan ul { list-style: none; padding: 0; margin: 22px 0 28px; display: grid; gap: 12px; }
+.wp-plan li { display: flex; gap: 10px; font-size: 15px; }
+.wp-plan li svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--lime); stroke-width: 2.4; margin-top: 3px; }
+.wp-plan .btn { margin-top: auto; width: 100%; }
+
+/* ---------- FAQ ---------- */
+.wp-faq { display: grid; grid-template-columns: 0.85fr 1.2fr; gap: clamp(30px, 5vw, 70px); align-items: start; }
+.faq-list { border-radius: var(--r-lg); padding: 8px 26px; }
+.faq-item { border-bottom: 1px solid var(--stroke); }
+.faq-item:last-child { border-bottom: 0; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; text-align: left; font-size: 1.05rem; font-weight: 600; transition: color .3s; }
+.faq-q:hover, .faq-item.is-open .faq-q { color: var(--lime); }
+.faq-icon { position: relative; flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--stroke-2); transition: transform .5s var(--ease), background .3s, border-color .3s; }
+.faq-icon::before, .faq-icon::after { content: ''; position: absolute; left: 10px; right: 10px; top: 16px; height: 1.5px; background: currentColor; }
+.faq-icon::after { transform: rotate(90deg); transition: transform .4s var(--ease); }
+.faq-item.is-open .faq-icon { transform: rotate(180deg); background: var(--lime); border-color: var(--lime); color: #000; }
+.faq-item.is-open .faq-icon::after { transform: rotate(0); }
+.faq-a { overflow: hidden; }
+.faq-a p { color: var(--muted); padding-bottom: 22px; max-width: 60ch; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .wp-hero-grid { grid-template-columns: 1fr; }
+  .wp-hero .wp-visual { height: 460px; max-width: 640px; width: 100%; justify-self: center; }
+  .wp-types { grid-template-columns: 1fr 1fr; }
+  .wp-included, .wp-faq { grid-template-columns: 1fr; }
+  .wp-stack { grid-template-columns: 1fr 1fr; }
+  .wp-plans { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  .wp-steps-line { left: 22px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .wp-steps-line span { transform: none !important; }
+  .wp-steps ol { grid-template-columns: 1fr; gap: 26px; }
+  .wp-steps li { display: grid; grid-template-columns: 46px 1fr; column-gap: 18px; }
+  .wp-step-n { grid-row: span 3; }
+  .wp-steps small { margin-top: 0; }
+}
+@media (max-width: 600px) {
+  .wp-hero { padding-top: 116px; }
+  .wp-hero .wp-visual { height: 360px; }
+  .wp-stats { grid-template-columns: 1fr 1fr; row-gap: 24px; }
+  .wp-types, .wp-feats, .wp-stack { grid-template-columns: 1fr; }
+  .faq-list { padding: 4px 18px; }
+  .faq-q { font-size: 1rem; }
+}
+
+/* ---------- Bottom link back to the service section on other pages ---------- */
+.page-link { margin-top: 28px; }

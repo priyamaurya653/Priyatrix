@@ -1,0 +1,115 @@
+/* =========================================================
+   Multilingual websites page
+   ========================================================= */
+
+/* ---------- Hero ---------- */
+.ml-visual { height: 560px; }
+.ml-greet {
+  position: absolute; left: 50%; bottom: 2%; transform: translateX(-50%); z-index: 3;
+  display: flex; align-items: center; gap: 14px; padding: 12px 22px; border-radius: 999px; white-space: nowrap;
+}
+.ml-greet span { font-size: 13.5px; color: var(--muted); }
+.ml-greet strong { display: inline-block; min-width: 120px; font-family: var(--font-body); font-weight: 600; font-size: 1.35rem; color: var(--lime); }
+
+/* ---------- Language grid ---------- */
+.ml-lang-head { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: end; }
+.ml-lang-head .lead { margin-top: 0; }
+
+.ml-filter { display: grid; gap: 14px; padding: 14px; border-radius: var(--r-md); margin-bottom: 22px; }
+.ml-search { display: flex; align-items: center; gap: 12px; padding: 0 18px; height: 54px; border-radius: 999px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--stroke-2); transition: border-color .3s; }
+.ml-search:focus-within { border-color: var(--lime); }
+.ml-search svg { width: 20px; height: 20px; color: var(--muted); flex-shrink: 0; }
+.ml-search input { flex: 1; min-width: 0; background: none; border: 0; outline: none; font-size: 16px; }
+.ml-regions { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.ml-regions::-webkit-scrollbar { display: none; }
+.ml-regions button { position: relative; flex-shrink: 0; padding: 9px 16px; border-radius: 999px; font-size: 14px; color: var(--muted); transition: color .3s; }
+.ml-regions button span { position: relative; }
+.ml-regions button.on { color: #000; font-weight: 600; }
+.ml-region-pill { position: absolute; inset: 0; border-radius: 999px; background: linear-gradient(180deg, #e2ff85, var(--lime) 50%, #b3de2e); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+
+.ml-langs { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.ml-lang {
+  position: relative; padding: 18px; border-radius: 20px; min-height: 120px;
+  display: flex; flex-direction: column; gap: 2px;
+  border: 1px solid var(--stroke);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015));
+  transition: border-color .3s, transform .4s var(--ease);
+}
+.ml-lang:hover { border-color: rgba(200, 245, 66, 0.45); transform: translateY(-4px); }
+.ml-native { font-size: 1.35rem; font-weight: 600; line-height: 1.3; }
+.ml-name { font-size: 13.5px; color: var(--muted); }
+.ml-hi { margin-top: auto; padding-top: 10px; font-size: 14px; color: var(--lime); }
+.ml-rtl { position: absolute; top: 14px; right: 14px; font-style: normal; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; color: #000; background: #A795FF; }
+.ml-empty { margin-top: 20px; color: var(--muted); text-align: center; }
+
+/* ---------- Feature explainer ---------- */
+.ml-explain { display: grid; grid-template-columns: 0.95fr 1.2fr; gap: 18px; align-items: start; }
+.ml-feat-list { display: grid; gap: 4px; }
+.ml-feat-list button { position: relative; display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 18px; text-align: left; transition: background .3s; }
+.ml-feat-list button:hover:not(.on) { background: rgba(255, 255, 255, 0.04); }
+.ml-feat-pill { position: absolute; inset: 0; border-radius: 18px; border: 1px solid rgba(200, 245, 66, 0.45); background: linear-gradient(135deg, rgba(200, 245, 66, 0.14), rgba(123, 92, 255, 0.1)); }
+.ml-feat-ic { position: relative; flex-shrink: 0; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 13px; color: var(--lime); background: rgba(200, 245, 66, 0.1); border: 1px solid rgba(200, 245, 66, 0.25); }
+.ml-feat-ic svg { width: 21px; height: 21px; }
+.ml-feat-list button.on .ml-feat-ic { background: linear-gradient(180deg, #e2ff85, var(--lime) 50%, #b3de2e); color: #000; }
+.ml-feat-txt { position: relative; }
+.ml-feat-txt b { display: block; font-weight: 600; font-size: 15.5px; }
+.ml-feat-txt small { display: block; font-size: 13.5px; color: var(--muted); }
+
+.ml-feat-detail { position: sticky; top: 110px; padding: clamp(24px, 3.4vw, 40px); border-radius: var(--r-lg); min-height: 440px; }
+.ml-detail-ic { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 20px; color: #000; background: linear-gradient(180deg, #e2ff85, var(--lime) 50%, #b3de2e); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 0 40px rgba(200, 245, 66, 0.35); }
+.ml-detail-ic svg { width: 30px; height: 30px; }
+.ml-detail-n { display: block; margin-top: 24px; font-size: 13px; color: var(--lime); }
+.ml-feat-detail h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2.6vw, 2.1rem); letter-spacing: -0.04em; margin-top: 6px; }
+.ml-feat-detail p { color: var(--muted); margin-top: 14px; font-size: 16.5px; }
+.ml-feat-detail ul { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; }
+.ml-feat-detail li { display: flex; gap: 10px; }
+.ml-feat-detail li svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--lime); stroke-width: 2.4; margin-top: 4px; }
+
+.ml-feat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
+.ml-feat-card { padding: 22px; border-radius: var(--r-md); }
+.ml-feat-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; letter-spacing: -0.03em; margin-top: 16px; }
+.ml-feat-card p { color: var(--muted); font-size: 14.5px; margin-top: 4px; }
+
+/* ---------- Form ---------- */
+.ml-form-grid { position: relative; display: grid; grid-template-columns: 0.9fr 1.2fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+.ml-form-perks { display: grid; gap: 12px; margin-top: 30px; }
+.ml-form-perks span { display: flex; align-items: center; gap: 10px; }
+.ml-form-perks svg { width: 20px; height: 20px; color: var(--lime); stroke-width: 2.4; }
+.ml-count { margin-left: 8px; font-size: 12.5px; color: var(--lime); }
+.ml-select {
+  width: 100%; margin-top: 12px; height: 48px; padding: 0 16px; border-radius: 14px;
+  background: rgba(0, 0, 0, 0.35); border: 1px solid var(--stroke-2); color: var(--text); outline: none; font-size: 15px;
+}
+.ml-select:focus { border-color: var(--lime); }
+.ml-select option { background: #111; color: #fff; }
+.ml-extra { margin-top: 10px; }
+
+.ml-toggle { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--muted); cursor: pointer; }
+.ml-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.ml-switch { flex-shrink: 0; position: relative; width: 46px; height: 26px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); border: 1px solid var(--stroke-2); transition: background .3s; }
+.ml-switch i { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform .35s var(--ease); }
+.ml-toggle input:checked + .ml-switch { background: var(--lime); }
+.ml-toggle input:checked + .ml-switch i { transform: translateX(20px); background: #000; }
+.ml-toggle input:focus-visible + .ml-switch { outline: 2px solid var(--lime); outline-offset: 3px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .ml-lang-head, .ml-explain, .ml-form-grid { grid-template-columns: 1fr; }
+  .ml-lang-head { gap: 0; }
+  .ml-lang-head .lead { margin-top: 20px; }
+  .ml-feat-detail { position: static; min-height: 0; }
+  .ml-feat-cards { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .wp-hero .ml-visual { height: 400px; }
+  .ml-greet { padding: 10px 16px; }
+  .ml-greet span { display: none; }
+  .ml-langs { grid-template-columns: 1fr 1fr; }
+  .ml-lang { padding: 14px; min-height: 104px; }
+  .ml-native { font-size: 1.1rem; }
+  .ml-feat-list { display: flex; overflow-x: auto; gap: 8px; scrollbar-width: none; }
+  .ml-feat-list::-webkit-scrollbar { display: none; }
+  .ml-feat-list button { flex-shrink: 0; }
+  .ml-feat-txt small { display: none; }
+  .ml-feat-cards { grid-template-columns: 1fr; }
+}

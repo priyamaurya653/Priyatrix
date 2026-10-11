@@ -1,0 +1,178 @@
+/* =========================================================
+   SEO page
+   ========================================================= */
+
+/* ---------- Hero search visual ---------- */
+.seo-visual { height: 560px; display: grid; place-items: center; }
+.seo-glow { position: absolute; width: 75%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(61, 123, 255, 0.45), rgba(200, 245, 66, 0.15) 45%, transparent 70%); filter: blur(50px); }
+.seo-serp { position: relative; width: min(470px, 100%); padding: 18px; border-radius: 28px; }
+.seo-bar { display: flex; align-items: center; gap: 12px; height: 52px; padding: 0 18px; border-radius: 999px; background: rgba(0, 0, 0, 0.5); border: 1px solid var(--stroke-2); }
+.seo-bar svg { width: 18px; height: 18px; color: var(--muted); flex-shrink: 0; }
+.seo-bar span { font-size: 15px; white-space: nowrap; overflow: hidden; }
+.seo-caret { display: inline-block; width: 2px; height: 17px; margin-left: 2px; vertical-align: middle; background: var(--lime); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.seo-results { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 7px; }
+.seo-results li { position: relative; display: flex; gap: 12px; padding: 11px 13px; border-radius: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid transparent; }
+.seo-results li.you { z-index: 2; background: linear-gradient(135deg, rgba(200, 245, 66, 0.2), rgba(123, 92, 255, 0.12)); border-color: rgba(200, 245, 66, 0.5); box-shadow: 0 0 40px -10px rgba(200, 245, 66, 0.5); }
+.seo-pos { flex-shrink: 0; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; font-size: 12px; font-weight: 700; background: rgba(255, 255, 255, 0.08); }
+.seo-results li.you .seo-pos { background: var(--lime); color: #000; }
+.seo-results div { min-width: 0; flex: 1; }
+.seo-results small { display: block; font-size: 11.5px; color: var(--faint); }
+.seo-results b { display: block; font-size: 13.5px; font-weight: 500; color: #9db8ff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.seo-results li.you b { color: var(--lime); font-weight: 600; }
+.seo-results i { display: block; height: 5px; width: 80%; margin-top: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.08); }
+.seo-badge { position: absolute; right: 0; top: 6%; z-index: 3; padding: 14px 20px; border-radius: 20px; text-align: center; }
+.seo-badge small { display: block; font-size: 12px; color: var(--muted); }
+.seo-badge strong { font-family: var(--font-display); font-size: 2.2rem; letter-spacing: -0.05em; color: var(--lime); text-shadow: 0 0 30px rgba(200, 245, 66, 0.5); }
+
+/* ---------- Shared bits ---------- */
+.seo-ic { width: 48px; height: 48px; display: grid; place-items: center; flex-shrink: 0; border-radius: 14px; color: var(--lime); background: rgba(200, 245, 66, 0.1); border: 1px solid rgba(200, 245, 66, 0.25); }
+.seo-ic svg { width: 22px; height: 22px; }
+.seo-ic.sm { width: 36px; height: 36px; border-radius: 11px; }
+.seo-ic.sm svg { width: 18px; height: 18px; }
+.seo-ic.big { width: 62px; height: 62px; border-radius: 18px; color: #000; background: linear-gradient(180deg, #e2ff85, var(--lime) 50%, #b3de2e); box-shadow: 0 0 40px rgba(200, 245, 66, 0.35); }
+.seo-ic.big svg { width: 28px; height: 28px; }
+.seo-sub { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.3rem, 2.4vw, 1.8rem); letter-spacing: -0.04em; margin: clamp(40px, 6vw, 70px) 0 20px; }
+
+/* ---------- What is SEO ---------- */
+.seo-intro { display: grid; grid-template-columns: 0.9fr 1.2fr; gap: clamp(30px, 5vw, 70px); align-items: end; }
+.seo-intro-text .lead { margin-top: 0; color: var(--text); }
+.seo-p { color: var(--muted); margin-top: 16px; }
+.seo-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.seo-flow-card { position: relative; padding: 26px; border-radius: var(--r-md); overflow: visible; }
+.seo-flow-top { display: flex; justify-content: space-between; align-items: center; }
+.seo-step { font-size: 12.5px; color: var(--lime); }
+.seo-flow-card h4 { font-family: var(--font-display); font-weight: 600; font-size: 1.6rem; letter-spacing: -0.04em; margin-top: 18px; }
+.seo-flow-card p { color: var(--muted); margin-top: 8px; font-size: 15px; }
+.seo-flow-card small { display: flex; gap: 8px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--stroke); font-size: 13.5px; color: var(--text); }
+.seo-flow-card small svg { flex-shrink: 0; width: 16px; height: 16px; color: var(--lime); stroke-width: 2.4; margin-top: 3px; }
+.seo-flow-arrow { position: absolute; right: -19px; top: 50%; z-index: 5; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); color: #000; transform: translateY(-50%) rotate(45deg); }
+.seo-flow-arrow svg { width: 16px; height: 16px; stroke-width: 2.4; }
+
+/* ---------- Types of SEO ---------- */
+.seo-types { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: 18px; align-items: start; }
+.seo-type-list { display: grid; gap: 4px; }
+.seo-type-list button { position: relative; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 16px; text-align: left; transition: background .3s; }
+.seo-type-list button:hover:not(.on) { background: rgba(255, 255, 255, 0.04); }
+.seo-type-list button > * { position: relative; }
+.seo-type-list b { font-weight: 600; font-size: 15px; }
+.seo-type-pill { position: absolute !important; inset: 0; border-radius: 16px; border: 1px solid rgba(200, 245, 66, 0.45); background: linear-gradient(135deg, rgba(200, 245, 66, 0.14), rgba(123, 92, 255, 0.1)); }
+.seo-type-detail { position: sticky; top: 110px; padding: clamp(22px, 3.4vw, 38px); border-radius: var(--r-lg); min-height: 520px; }
+.seo-type-head { display: flex; align-items: center; gap: 16px; }
+.seo-type-head small { font-size: 12.5px; color: var(--lime); }
+.seo-type-head h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2.8vw, 2.2rem); letter-spacing: -0.04em; line-height: 1.1; }
+.seo-type-detail h4 { margin-top: 22px; font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--faint); }
+.seo-type-detail > div > p { margin-top: 6px; }
+.seo-type-detail ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+.seo-type-detail li { display: flex; gap: 8px; font-size: 14.5px; color: var(--muted); }
+.seo-type-detail li svg { flex-shrink: 0; width: 17px; height: 17px; color: var(--lime); stroke-width: 2.4; margin-top: 3px; }
+.seo-example { margin-top: 22px; padding: 16px 18px; border-radius: 16px; border-left: 3px solid var(--lime); background: rgba(200, 245, 66, 0.07); }
+.seo-example small { font-size: 12px; font-weight: 600; color: var(--lime); }
+.seo-example p { margin-top: 4px; font-size: 15px; }
+
+/* ---------- Ranking factors ---------- */
+.seo-factors-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
+.seo-factors { padding: clamp(22px, 3vw, 34px); border-radius: var(--r-lg); display: grid; gap: 16px; }
+.seo-factor-top { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
+.seo-factor-top b { font-size: 13px; color: var(--lime); white-space: nowrap; }
+.seo-factor-bar { height: 9px; margin-top: 7px; border-radius: 999px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+.seo-factor-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--purple), var(--lime)); box-shadow: 0 0 12px rgba(200, 245, 66, 0.5); }
+.seo-factors-note { font-size: 12.5px; color: var(--faint); }
+
+/* ---------- Self-check ---------- */
+.seo-check { display: grid; grid-template-columns: 1.35fr 1fr; gap: 18px; align-items: start; }
+.seo-check-list { padding: 10px clamp(14px, 2.5vw, 26px); border-radius: var(--r-lg); }
+.seo-q { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--stroke); }
+.seo-q:last-child { border-bottom: 0; }
+.seo-q-n { flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; font-size: 12.5px; font-weight: 700; background: rgba(255, 255, 255, 0.07); transition: background .3s, color .3s; }
+.seo-q.yes .seo-q-n { background: var(--lime); color: #000; }
+.seo-q.no .seo-q-n { background: #ff6b6b; color: #000; }
+.seo-q p { flex: 1; font-size: 15px; }
+.seo-q-btns { display: flex; gap: 6px; flex-shrink: 0; }
+.seo-q-btns button { padding: 7px 14px; border-radius: 999px; font-size: 13.5px; border: 1px solid var(--stroke-2); transition: all .25s; }
+.seo-q-btns button:hover { border-color: var(--text); }
+.seo-q-btns button.on.yes { background: var(--lime); border-color: var(--lime); color: #000; font-weight: 600; }
+.seo-q-btns button.on.no { background: #ff6b6b; border-color: #ff6b6b; color: #000; font-weight: 600; }
+
+.seo-check-result { position: sticky; top: 110px; padding: clamp(22px, 3vw, 34px); border-radius: var(--r-lg); text-align: center; border-color: rgba(200, 245, 66, 0.4); }
+.seo-gauge { position: relative; width: 180px; margin: 0 auto; }
+.seo-gauge svg { transform: rotate(-90deg); }
+.seo-gauge .g-bg { fill: none; stroke: rgba(255, 255, 255, 0.08); stroke-width: 10; }
+.seo-gauge .g-fg { fill: none; stroke: var(--lime); stroke-width: 10; stroke-linecap: round; filter: drop-shadow(0 0 8px rgba(200, 245, 66, 0.6)); }
+.seo-gauge > div { position: absolute; inset: 0; display: grid; place-content: center; }
+.seo-gauge strong { font-family: var(--font-display); font-size: 3rem; letter-spacing: -0.05em; line-height: 1; }
+.seo-gauge small { font-size: 13px; color: var(--faint); }
+.seo-score-label { margin-top: 14px; font-weight: 600; font-size: 1.1rem; color: var(--lime); }
+.seo-answered { color: var(--faint); font-size: 13px; }
+.seo-todo { margin: 20px 0; text-align: left; }
+.seo-todo h4 { font-size: 13px; font-weight: 600; color: #ff8a8a; text-transform: uppercase; letter-spacing: .08em; }
+.seo-todo ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; max-height: 260px; overflow-y: auto; }
+.seo-todo li { display: flex; gap: 10px; font-size: 14px; color: var(--muted); }
+.seo-todo li span { flex-shrink: 0; width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; font-size: 12px; font-weight: 700; background: #ff6b6b; color: #000; margin-top: 1px; }
+.seo-check-result .btn { width: 100%; margin-top: 20px; }
+
+/* ---------- Results ---------- */
+.seo-results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.seo-result { padding: 26px; border-radius: var(--r-md); }
+.seo-result > small { font-size: 12.5px; color: var(--lime); }
+.seo-result h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; letter-spacing: -0.04em; margin-top: 4px; }
+.seo-ba { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; margin-top: 18px; }
+.seo-ba > svg { width: 18px; height: 18px; color: var(--lime); }
+.seo-ba div { padding: 12px; border-radius: 14px; background: rgba(0, 0, 0, 0.35); border: 1px solid var(--stroke); }
+.seo-ba span { display: block; font-size: 11.5px; color: var(--faint); }
+.seo-ba b { font-size: 14px; }
+.seo-ba .lime { color: var(--lime); }
+.seo-result-m { margin-top: 16px; font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -0.03em; }
+
+/* ---------- Glossary & myths ---------- */
+.seo-gl-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; }
+.seo-gl-search { display: flex; align-items: center; gap: 10px; width: min(380px, 100%); height: 52px; padding: 0 18px; border-radius: 999px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--stroke-2); }
+.seo-gl-search:focus-within { border-color: var(--lime); }
+.seo-gl-search svg { width: 18px; height: 18px; color: var(--muted); flex-shrink: 0; }
+.seo-gl-search input { flex: 1; min-width: 0; background: none; border: 0; outline: none; font-size: 15.5px; }
+.seo-gl { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.seo-term { padding: 18px; border-radius: 18px; }
+.seo-term b { font-family: var(--font-display); font-weight: 500; color: var(--lime); letter-spacing: -0.02em; }
+.seo-term p { color: var(--muted); font-size: 14px; margin-top: 6px; line-height: 1.5; }
+.seo-empty { text-align: center; color: var(--muted); margin-top: 20px; }
+.seo-myth-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.seo-myth { padding: 20px; border-radius: var(--r-md); }
+.seo-myth-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 3px 9px; border-radius: 999px; background: #ff6b6b; color: #000; }
+.seo-myth-tag.fact { margin-top: 14px; background: var(--lime); }
+.seo-myth-m { margin-top: 8px; font-weight: 600; text-decoration: line-through; text-decoration-color: rgba(255, 107, 107, 0.7); }
+.seo-myth p:last-child { margin-top: 8px; font-size: 14px; color: var(--muted); }
+
+/* ---------- Pricing ---------- */
+.seo-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+.seo-extras { margin-top: 24px; padding: clamp(22px, 3vw, 34px); border-radius: var(--r-lg); }
+.seo-extras h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.04em; }
+.seo-extras ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.seo-extras li { display: flex; align-items: baseline; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--stroke); font-size: 15px; }
+.seo-extras li i { flex: 1; border-bottom: 1px dashed rgba(255, 255, 255, 0.15); transform: translateY(-4px); }
+.seo-extras li b { color: var(--lime); white-space: nowrap; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .seo-myth-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1024px) {
+  .seo-intro, .seo-types, .seo-factors-grid, .seo-check { grid-template-columns: 1fr; }
+  .seo-flow, .seo-results-grid { grid-template-columns: 1fr; }
+  .seo-flow-arrow { right: 50%; top: auto; bottom: -19px; transform: translateX(50%) rotate(135deg); }
+  .seo-type-detail, .seo-check-result { position: static; min-height: 0; }
+  .seo-plans { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  .seo-myth-grid { grid-template-columns: 1fr 1fr; }
+  .wp-hero .seo-visual { height: 520px; }
+}
+@media (max-width: 640px) {
+  .wp-hero .seo-visual { height: 460px; }
+  .seo-badge { top: -2%; padding: 10px 14px; }
+  .seo-badge strong { font-size: 1.6rem; }
+  .seo-type-list { display: flex; overflow-x: auto; gap: 6px; scrollbar-width: none; }
+  .seo-type-list::-webkit-scrollbar { display: none; }
+  .seo-type-list button { flex-shrink: 0; }
+  .seo-type-detail ul, .seo-extras ul, .seo-myth-grid { grid-template-columns: 1fr; }
+  .seo-q { flex-wrap: wrap; }
+  .seo-q p { flex-basis: calc(100% - 42px); }
+  .seo-q-btns { margin-left: 42px; }
+}
